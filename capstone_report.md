@@ -34,7 +34,7 @@ The project is developed following the next steps:
 4. Model training with raw data using AutoGluon.
 5. Feature engineering.
 6. Model training using AutoGluon with new features (time-varying covariates).
-7. Benchmark of models
+7. Benchmark of models.
 
 
 ### Metrics
@@ -43,7 +43,7 @@ Based on the characteristics of the forecasting problem, the performance of the 
 
 <div align="center">
     <img title="RMSE formula" alt="rmse formula"
-         src="./images/rmse.png" width="300" height="200" style="background:white" id="fig_1">  
+         src="./images/rmse.png" style="background:white" id="fig_1">  
     <div>Fig. 1 RMSE Formula. Source: Wikipedia</div>
 </div>
 </br>
@@ -443,14 +443,18 @@ The machine learning model built with Sagemaker and AuoGluon TimeSeries can pred
 
 
 ### Reflection
-In this section, you will summarize the entire end-to-end problem solution and discuss one or two particular aspects of the project you found interesting or difficult. You are expected to reflect on the project as a whole to show that you have a firm understanding of the entire process employed in your work. Questions to ask yourself when writing this section:
-- _Have you thoroughly summarized the entire process you used for this project?_
-- _Were there any interesting aspects of the project?_
-- _Were there any difficult aspects of the project?_
-- _Does the final model and solution fit your expectations for the problem, and should it be used in a general setting to solve these types of problems?_
+In this project, the main goal was to forecast hourly power demand of the national electric system using time series historical data to help free users make better decisions and reduce their transmission charges. The machine learning model was built using the AutoGluon framework on the Amazon SageMaker platform to forecast one-day ahead hourly power demand. The project followed a step-by-step approach from data extraction to model training and evaluation.
+
+One aspect of the project that was particularly interesting was the feature engineering step. This is because it involved incorporating time-varying covariates into the model to improve its accuracy. This process shows the importance of selecting relevant features to improve the model's performance.
+
+On the other hand, some aspects of the project that were challenging were the data extraction process and the exploratory data analysis (EDA). This is because it required significant time to download data from daily reports in Excel format, extract and transform relevant data, and finally load it into an AWS S3 bucket. Besides, it required a deep understanding of the data and the ability to extract meaningful insights that could guide the model development process. Nonetheless, data visualization techniques were leveraged to identify important patterns in the data that helped to build the model.
+
+In conclusion, the project provided a comprehensive understanding of the end-to-end process involved in developing a machine learning model for a time series problem. 
+
 
 ### Improvement
-In this section, you will need to provide discussion as to how one aspect of the implementation you designed could be improved. As an example, consider ways your implementation can be made more general, and what would need to be modified. You do not need to make this improvement, but the potential solutions resulting from these changes are considered and compared/contrasted to your current solution. Questions to ask yourself when writing this section:
-- _Are there further improvements that could be made on the algorithms or techniques you used in this project?_
-- _Were there algorithms or techniques you researched that you did not know how to implement, but would consider using if you knew how?_
-- _If you used your final solution as the new benchmark, do you think an even better solution exists?_
+One aspect of the current implementation that could be improved is the feature engineering step.   
+
+In this project, time-varying covariates were added to the model to improve its accuracy. One option to improve the model is to use an automated feature engineering process. This approach involves using algorithms to automatically generate features from the raw data. This can save time and improve the accuracy of the model by identifying complex relationships that may not be apparent through manual feature engineering.   
+
+In addition, incorporating new features from external factors such as weather data or economic indicators may influence in power demand. 
